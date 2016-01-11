@@ -6,7 +6,7 @@
 
 A [gist](https://gist.github.com/) powered CLI snippet manager.
 
-Save a snippet as a Gist in GitHub, access the snippet on the command line.
+Save a snippet as a gist in GitHub, access the snippet on the command line.
 
 Written in ES2015 and published as ES5.
 
