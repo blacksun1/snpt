@@ -1,0 +1,6 @@
+{
+  "preset": "node-style-guide",
+  "esnext": true,
+  "requireCamelCaseOrUpperCaseIdentifiers": false,
+  "requireCapitalizedComments": false
+}

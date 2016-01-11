@@ -1,0 +1,44 @@
+{
+  "name": "snpt",
+  "version": "0.0.2",
+  "description": "Snpt - A gist powered CLI snippet manager",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "sa": "jscs src && jshint src",
+    "prepublish": "npm run build"
+  },
+  "author": "Michael David Barrett <mike182uk@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mike182uk/snpt.git"
+  },
+  "homepage": "https://github.com/mike182uk/snpt",
+  "keywords": [
+    "gist",
+    "snippet"
+  ],
+  "bin": {
+    "snpt": "./dist/cli.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.1.1",
+    "chalk": "^1.1.1",
+    "configstore": "^1.4.0",
+    "copy-paste": "^1.1.4",
+    "fetch-gists": "^1.0.1",
+    "get-stdin": "^5.0.1",
+    "inquirer": "^0.11.2",
+    "lodash": "^3.10.1",
+    "meow": "^3.7.0",
+    "moment": "^2.11.1",
+    "request": "^2.67.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.4.0",
+    "babel-preset-es2015": "^6.3.13",
+    "jscs": "^2.8.0",
+    "jshint": "^2.9.1-rc2"
+  }
+}
