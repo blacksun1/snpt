@@ -1,7 +1,7 @@
 {
   "name": "snpt",
   "version": "0.0.2",
-  "description": "Snpt - A gist powered CLI snippet manager",
+  "description": "A gist powered CLI snippet manager",
   "main": "index.js",
   "scripts": {
     "build": "babel src -d dist",
