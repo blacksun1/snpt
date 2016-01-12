@@ -4,7 +4,7 @@
   "description": "A gist powered CLI snippet manager",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d dist",
+    "build": "babel src -d lib",
     "sa": "jscs src && jshint src",
     "prepublish": "npm run build"
   },
@@ -20,7 +20,7 @@
     "snippet"
   ],
   "bin": {
-    "snpt": "./dist/cli.js"
+    "snpt": "./lib/cli.js"
   },
   "dependencies": {
     "bluebird": "^3.1.1",
