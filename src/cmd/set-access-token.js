@@ -1,9 +1,4 @@
-import _ from 'lodash';
-import chalk from 'chalk';
-import fetchGists from 'fetch-gists';
 import inquirer from 'inquirer';
-import Promise from 'bluebird';
-import request from 'request';
 import * as util from '../util';
 
 const accessTokenConfigKey = 'gh-access-token';

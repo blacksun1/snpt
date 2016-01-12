@@ -1,4 +1,3 @@
-import chalk from 'chalk';
 import findSnippet from '../find-snippet';
 import fs from 'fs';
 import * as util from '../util';

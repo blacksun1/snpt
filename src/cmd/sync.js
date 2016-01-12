@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import chalk from 'chalk';
 import fetchGists from 'fetch-gists';
 import inquirer from 'inquirer';
 import moment from 'moment';

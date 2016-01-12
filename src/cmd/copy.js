@@ -1,4 +1,3 @@
-import chalk from 'chalk';
 import { copy as copyToClipboard } from 'copy-paste';
 import findSnippet from '../find-snippet';
 import * as util from '../util';
@@ -32,6 +31,6 @@ function usage() {
     Snpt will parse anything in the sqaure brackets that appears at the end of
     the string. This is useful for piping into snpt:
 
-      echo 'foo - bar baz [aff9aa71ead70963p3bfa4e49b18d27539f9d9d8]' | snipt w
+      echo 'foo - bar baz [aff9aa71ead70963p3bfa4e49b18d27539f9d9d8]' | snipt cp
   `);
 }

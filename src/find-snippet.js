@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import chalk from 'chalk';
 import getStdin from 'get-stdin';
 import inquirer from 'inquirer';
 import * as util from './util';
