@@ -30,7 +30,7 @@
     "fetch-gists": "^1.0.1",
     "get-stdin": "^5.0.1",
     "inquirer": "^0.11.2",
-    "lodash": "^3.10.1",
+    "lodash": "^4.0.0",
     "meow": "^3.7.0",
     "moment": "^2.11.1",
     "request": "^2.67.0"
