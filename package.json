@@ -4,7 +4,7 @@
   "description": "A gist powered CLI snippet manager",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "rm -rf ./lib && babel src -d lib",
     "dev": "watch 'clear; npm test -s;' src test",
     "prepublish": "npm run build",
     "sa": "jscs src && jshint src",
