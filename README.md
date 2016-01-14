@@ -101,7 +101,7 @@ alias ws="snpt ls | fzf | snpt write" # ws for write snippet
 
 ## Uninstalling snpt
 
-First run `snpt sync -h` to find the location of snpt's config file.
+First run `snpt` to find the location of snpt's config file.
 
 Once you have deleted the config file you can uninstall snpt by running:
 

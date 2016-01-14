@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import command from '../command';
 import fetchGists from 'fetch-gists';
 import inquirer from 'inquirer';
 import moment from 'moment';
@@ -10,11 +11,16 @@ const accessTokenConfigKey = 'gh-access-token';
 const lastSyncDateConfigKey = 'last-sync-date';
 const snippetsConfigKey = 'snippets';
 
-export default function syncCommand(cli, config) {
-  if (util.usageHelpRequired(cli)) {
-    return usage(config);
-  }
+const name = 'sync';
+const usage = `
+  Usage: snpt sync
 
+  If you have already supplied a GitHub access token this will be used when
+  requesting your gists from GitHub. If you have not supplied one, you will be
+  prompted to supply one.
+`;
+
+function syncAction(cli, config) {
   let accessToken = config.get(accessTokenConfigKey);
 
   if (!accessToken) {
@@ -88,16 +94,4 @@ function syncGists(config) {
   });
 }
 
-function usage(config) {
-  console.log(`
-    Usage: snpt sync
-
-    If you have already supplied a GitHub access token this will be used when
-    requesting your gists from GitHub. If you have not supplied one, you will be
-    prompted to supply one.
-
-    Your GitHub access token is stored in the snpt's config file located at:
-
-      ${config.path}
-  `);
-}
+export default command(name, usage, syncAction);

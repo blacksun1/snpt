@@ -1,13 +1,15 @@
 import _ from 'lodash';
+import command from '../command';
 import * as util from '../util';
 
 const snippetsConfigKey = 'snippets';
 
-export default function listCommand(cli, config) {
-  if (util.usageHelpRequired(cli)) {
-    return usage();
-  }
+const name = 'ls';
+const usage = `
+  Usage: snpt ls
+`;
 
+function listAction(cli, config) {
   let snippets = config.get(snippetsConfigKey);
 
   if (!snippets.length) {
@@ -19,8 +21,4 @@ export default function listCommand(cli, config) {
   });
 }
 
-function usage() {
-  console.log(`
-    Usage: snpt ls
-  `);
-}
+export default command(name, usage, listAction);

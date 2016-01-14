@@ -35,7 +35,3 @@ export function outputSuccess(message) {
 export function outputError(message) {
   console.log(chalk.red(message));
 }
-
-export function usageHelpRequired(cli) {
-  return cli.flags.hasOwnProperty('h');
-}

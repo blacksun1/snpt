@@ -1,14 +1,27 @@
 #! /usr/bin/env node
 
+import _ from 'lodash';
 import ConfigStore from 'configstore';
 import meow from 'meow';
 
 import pkg from '../package.json';
-import copyCommand from './cmd/copy.js';
-import listCommand from './cmd/list.js';
-import setAccessTokenCommand from './cmd/set-access-token.js';
-import syncCommand from './cmd/sync.js';
-import writeToDiskCommand from './cmd/write-to-disk.js';
+import copyCommand from './command/copy.js';
+import listCommand from './command/list.js';
+import setAccessTokenCommand from './command/set-access-token.js';
+import syncCommand from './command/sync.js';
+import writeToDiskCommand from './command/write-to-disk.js';
+
+const commands = [
+  copyCommand,
+  listCommand,
+  setAccessTokenCommand,
+  syncCommand,
+  writeToDiskCommand,
+];
+
+const config = new ConfigStore(pkg.name, {
+  snippets: [],
+});
 
 const cli = meow({
   help: `
@@ -22,34 +35,26 @@ Commands:
 To view usage information for a command, use the -h flag when running it:
 
   snpt cp -h
+
+snipt's config file can be found at:
+
+  ${config.path}
+
 `,
 });
-const config = new ConfigStore(pkg.name, {
-  snippets: [],
+
+const command = _.find(commands, command => {
+  return command.getName() == cli.input[0];
 });
 
-switch (cli.input[0]) {
-  case 'cp': {
-    copyCommand(cli, config);
-    break;
+const helpRequired = cli.flags.hasOwnProperty('h');
+
+if (command) {
+  if (helpRequired) {
+    console.log(command.getUsage());
+  } else {
+    command.run(cli, config);
   }
-  case 'ls': {
-    listCommand(cli, config);
-    break;
-  }
-  case 'sync': {
-    syncCommand(cli, config);
-    break;
-  }
-  case 'token': {
-    setAccessTokenCommand(cli, config);
-    break;
-  }
-  case 'write': {
-    writeToDiskCommand(cli, config);
-    break;
-  }
-  default: {
-    cli.showHelp();
-  }
+} else {
+  cli.showHelp();
 }

@@ -1,13 +1,18 @@
+import command from '../command';
 import inquirer from 'inquirer';
 import * as util from '../util';
 
 const accessTokenConfigKey = 'gh-access-token';
 
-export default function setAccessTokenCommand(cli, config) {
-  if (util.usageHelpRequired(cli)) {
-    return usage(config);
-  }
+const name = 'token';
+const usage = `
+  Usage: snpt token
 
+  You will be prompted to supply your GitHub access token. This will be saved
+  in snpt's config file.
+`;
+
+function setAccessTokenAction(cli, config) {
   inquirer.prompt({
     name: 'accessToken',
     message: 'Enter your GitHub access token:',
@@ -19,13 +24,4 @@ export default function setAccessTokenCommand(cli, config) {
   });
 }
 
-function usage(config) {
-  console.log(`
-    Usage: snpt token
-
-    You will be prompted to supply your GitHub access token. This will be saved
-    in snpt's config file located at:
-
-      ${config.path}
-  `);
-}
+export default command(name, usage, setAccessTokenAction);
