@@ -21,8 +21,8 @@ const usage = `
     echo 'foo - bar baz [aff9aa71ead70963p3bfa4e49b18d27539f9d9d8]' | snipt cp
 `;
 
-function copyAction(cli, config) {
-  return findSnippet(cli, config, copySnippetToClipboard);
+function copyAction(config, cli) {
+  return findSnippet(config, cli, copySnippetToClipboard);
 }
 
 function copySnippetToClipboard(snippet) {

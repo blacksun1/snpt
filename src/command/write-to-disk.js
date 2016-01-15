@@ -21,8 +21,8 @@ const usage = `
     echo 'foo - bar [aff9aa71ead70963p3bfa4e49b18d27539f9d9d8]' | snipt write
 `;
 
-function writeToDiskAction(cli, config) {
-  return findSnippet(cli, config, writeSnippetFileToDisk);
+function writeToDiskAction(config, cli) {
+  return findSnippet(config, cli, writeSnippetFileToDisk);
 }
 
 function writeSnippetFileToDisk(snippet) {

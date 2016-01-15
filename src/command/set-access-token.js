@@ -12,7 +12,7 @@ const usage = `
   in snpt's config file.
 `;
 
-function setAccessTokenAction(cli, config) {
+function setAccessTokenAction(config) {
   inquirer.prompt({
     name: 'accessToken',
     message: 'Enter your GitHub access token:',

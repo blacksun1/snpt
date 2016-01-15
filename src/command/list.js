@@ -9,7 +9,7 @@ const usage = `
   Usage: snpt ls
 `;
 
-function listAction(cli, config) {
+function listAction(config) {
   let snippets = config.get(snippetsConfigKey);
 
   if (!snippets.length) {

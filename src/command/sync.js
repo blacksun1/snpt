@@ -20,7 +20,7 @@ const usage = `
   prompted to supply one.
 `;
 
-function syncAction(cli, config) {
+function syncAction(config) {
   let accessToken = config.get(accessTokenConfigKey);
 
   if (!accessToken) {
@@ -41,6 +41,9 @@ function syncAction(cli, config) {
 function getGistContent(url) {
   return new Promise((resolve, reject) => {
     request.get(url, function onResponse(error, response, body) {
+      if (error) {
+        return reject(error);
+      }
       resolve(body);
     });
   });
@@ -76,6 +79,8 @@ function syncGists(config) {
               snippet.content = content;
 
               resolve(snippet);
+            }).catch(function onGistContentRetrievalError(error) {
+              reject(error);
             });
         });
 
@@ -83,14 +88,14 @@ function syncGists(config) {
       });
     });
 
-    Promise.all(tasks).then(function onTaskComplete(snippets) {
+    Promise.all(tasks).then(function onTasksComplete(snippets) {
       config.set(snippetsConfigKey, snippets);
       config.set(lastSyncDateConfigKey, moment().toISOString());
 
       util.outputSuccess(`${snippets.length} gist(s) synced`);
     });
-  }).catch(function onGistsRetrievalError(err) {
-    util.outputError(`Failed to sync gists due to: ${err}`);
+  }).catch(function onGistsRetrievalError() {
+    util.outputError('Failed to sync gists');
   });
 }
 

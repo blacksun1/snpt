@@ -52,7 +52,7 @@ if (command) {
   if (helpRequired) {
     console.log(command.getUsage());
   } else {
-    command.run(cli, config);
+    command.run(config, cli);
   }
 } else {
   cli.showHelp();

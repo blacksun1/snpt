@@ -12,14 +12,6 @@ export function createSnippetDescription(snippet) {
   return description;
 }
 
-export function extractSnippetIdFromQuery(query) {
-  let snippetIdPattern = /\[([A-Za-z0-9]+)\]$/;
-
-  if (snippetIdPattern.test(query)) {
-    return snippetIdPattern.exec(query)[1];
-  }
-}
-
 export function output(message) {
   console.log(message);
 }

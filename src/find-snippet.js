@@ -5,7 +5,7 @@ import * as util from './util';
 
 const snippetsConfigKey = 'snippets';
 
-export default function findSnippet(cli, config, onFoundSnippet) {
+export default function findSnippet(config, cli, onFoundSnippet) {
   let snippets = config.get(snippetsConfigKey);
   let snippetId = cli.input[1] || null;
 
@@ -16,8 +16,8 @@ export default function findSnippet(cli, config, onFoundSnippet) {
   getStdin().then(function onStdinBuffered(stdin) {
     // if there is data in STDIN try and extract the id
     if (stdin) {
-      let id = util.extractSnippetIdFromQuery(_.trim(stdin));
-      let snippet = _.findWhere(snippets, { id: id });
+      let id = extractSnippetIdFromQuery(_.trim(stdin));
+      let snippet = _.find(snippets, { id: id });
 
       if (snippet) {
         return onFoundSnippet(snippet);
@@ -54,4 +54,12 @@ export default function findSnippet(cli, config, onFoundSnippet) {
       });
     }
   });
+}
+
+function extractSnippetIdFromQuery(query) {
+  let snippetIdPattern = /\[([A-Za-z0-9]+)\]$/;
+
+  if (snippetIdPattern.test(query)) {
+    return snippetIdPattern.exec(query)[1];
+  }
 }
