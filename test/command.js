@@ -6,7 +6,7 @@ import command from '../src/command';
 test('command has a name', assert => {
   assert.plan(1);
 
-  var testCommand = command('foo');
+  let testCommand = command('foo');
 
   assert.equal(testCommand.getName(), 'foo', 'name is returned');
 
@@ -16,7 +16,7 @@ test('command has a name', assert => {
 test('command has usage info', assert => {
   assert.plan(1);
 
-  var testCommand = command('', 'foo');
+  let testCommand = command('', 'foo');
 
   assert.equal(testCommand.getUsage(), 'foo', 'usage info is returned');
 
@@ -26,9 +26,9 @@ test('command has usage info', assert => {
 test('command has an action', assert => {
   assert.plan(1);
 
-  var actionSpy = espionage.createSpy();
-  var arg1 = 'foo';
-  var arg2 = 'bar';
+  let actionSpy = espionage.createSpy();
+  let arg1 = 'foo';
+  let arg2 = 'bar';
 
   command('', '', actionSpy).run(arg1, arg2);
 

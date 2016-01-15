@@ -36,10 +36,9 @@ To view usage information for a command, use the -h flag when running it:
 
   snpt cp -h
 
-snpt's config file can be found at:
+Config file can be found at:
 
   ${config.path}
-
 `,
 });
 
