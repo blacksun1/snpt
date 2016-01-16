@@ -23,3 +23,15 @@ The src is written in ES2015 and transpiled to ES5 when the module is published.
 ```bash
 npm run build
 ```
+
+## Running Tests
+
+```bash
+npm test
+```
+
+## Running Static Analysis
+
+```bash
+npm run sa
+```
