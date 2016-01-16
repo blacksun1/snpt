@@ -5,9 +5,9 @@
 [![npm](https://img.shields.io/npm/dm/snpt.svg?style=flat-square)](https://www.npmjs.com/package/snpt)
 [![License](https://img.shields.io/github/license/mike182uk/snpt.svg?style=flat-square)](https://www.npmjs.com/package/snpt)
 
-A [gist](https://gist.github.com/) powered CLI snippet manager.
+A [gist](https://gist.github.com/) powered CLI snippet retriever.
 
-Save a snippet as a gist in GitHub, access the snippet on the command line.
+Save a snippet as a gist in GitHub, retrieve the snippet on the command line.
 
 Written in ES2015 and published as ES5.
 
