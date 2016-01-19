@@ -13,21 +13,36 @@ Written in ES2015 and published as ES5.
 
 ![](example.gif)
 
-## Prerequisites
+## Index
+
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Syncing your snippets](#sync)
+  - [Copying a snippet to the clipboard](#cp)
+  - [Creating a file from a snippet](#write)
+  - [Listing available snippets](#list)
+  - [Setting a new GitHub access token](#token)
+  - [Viewing help for a command](#help)
+  - [Improve your workflow with fuzzy search](#fuzzy-search)
+- [Bash completion](#bash-completion)
+- [Uninstalling snpt](#uninstall)
+
+##<a id="prerequisites"></a>Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
 - GitHub account (duh!)
 - GitHub [access token](https://github.com/blog/1509-personal-api-tokens) with the `gist` scope enabled
 
-## Installation
+##<a id="installation"></a>Installation
 
 ```
 npm install -g snpt
 ```
 
-## Usage
+##<a id="usage"></a>Usage
 
-### Syncing your snippets
+###<a id="syncing"></a>Syncing your snippets
 
 Before you can use snpt you will need to sync your gists:
 
@@ -39,7 +54,7 @@ If this is the first time you have synced your gists you will be prompted to inp
 
 The sync command will download all of your public and private gists and store them locally for fast retrieval by snpt.
 
-### Copying a snippet to the clipboard
+###<a id="cp"></a>Copying a snippet to the clipboard
 
 ```
 snpt cp [snippetID]
@@ -47,7 +62,7 @@ snpt cp [snippetID]
 
 `snippetId` is an optional parameter. If a `snippetId` is not supplied a prompt will be displayed allowing you to choose a snippet to copy to the clipboard.
 
-### Creating a file from a snippet
+###<a id="write"></a>Creating a file from a snippet
 
 ```
 snpt write [snippetID]
@@ -55,7 +70,7 @@ snpt write [snippetID]
 
 `snippetId` is an optional parameter. If a `snippetId` is not supplied a prompt will be displayed allowing you to choose a snippet to create a file from. The created file will be named after the name of the gist file.
 
-### Listing available snippets
+###<a id="list"></a>Listing available snippets
 
 ```
 snpt ls
@@ -63,7 +78,7 @@ snpt ls
 
 This can be useful for searching for a specific snippet - `snpt ls | grep <query>`.
 
-### Set a new GitHub access token
+###<a id="token"></a>Setting a new GitHub access token
 
 ```
 snpt token
@@ -71,7 +86,7 @@ snpt token
 
 This command will prompt you to input a new GitHub [access token](https://github.com/blog/1509-personal-api-tokens).
 
-### Viewing help for a command
+###<a id="help"></a>Viewing help for a command
 
 You can view help for a command by passing the `-h` flag when running a command:
 
@@ -79,7 +94,7 @@ You can view help for a command by passing the `-h` flag when running a command:
 snpt sync -h
 ```
 
-### Improve your workflow with fuzzy search
+###<a id="fuzzy-search"></a>Improve your workflow with fuzzy search
 
 snpt :heart: [fzf](https://github.com/junegunn/fzf)
 
@@ -99,7 +114,7 @@ alias ws="snpt ls | fzf | snpt write" # ws for write snippet
 
 `snpt cp` and `snpt write` both accept stdin as an input. If stdin is detected snpt will try and extract a snippet ID from it. This is how the above `fzf` usage works.
 
-## Bash completion
+##<a id="bash-completion"></a>Bash completion
 
 If you want bash completion for `snpt`, download the file `bash_completion` to your preferred bash completion location (i.e `~/bash_completion/snpt`) and make sure you source this file in your `~/.bashrc`:
 
@@ -107,7 +122,7 @@ If you want bash completion for `snpt`, download the file `bash_completion` to y
 source "$HOME/bash_completion/snpt"
 ```
 
-## Uninstalling snpt
+##<a id="uninstall"></a>Uninstalling snpt
 
 First run `snpt` to find the location of snpt's config file.
 
