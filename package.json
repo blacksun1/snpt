@@ -4,7 +4,8 @@
   "description": "A gist powered CLI snippet retriever",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf ./lib && babel src -d lib",
+    "bash-completion": "babel-node ./scripts/build-bash-completion.js",
+    "build": "rm -rf ./lib && babel src -d lib && npm run bash-completion -s",
     "dev": "watch 'clear; npm test -s;' src test",
     "prepublish": "npm run build",
     "sa": "jscs src && jshint src",

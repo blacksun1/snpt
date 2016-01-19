@@ -71,7 +71,6 @@ snpt token
 
 This command will prompt you to input a new GitHub [access token](https://github.com/blog/1509-personal-api-tokens).
 
-
 ### Viewing help for a command
 
 You can view help for a command by passing the `-h` flag when running a command:
@@ -99,6 +98,14 @@ alias ws="snpt ls | fzf | snpt write" # ws for write snippet
 ```
 
 `snpt cp` and `snpt write` both accept stdin as an input. If stdin is detected snpt will try and extract a snippet ID from it. This is how the above `fzf` usage works.
+
+## Bash completion
+
+If you want bash completion for `snpt`, download the file `bash_completion` to your preferred bash completion location (i.e `~/bash_completion/snpt`) and make sure you source this file in your `~/.bashrc`:
+
+```bash
+source "$HOME/bash_completion/snpt"
+```
 
 ## Uninstalling snpt
 
