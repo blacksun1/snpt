@@ -1,4 +1,4 @@
-# Snpt
+# <img src="icon.png" height="24"> Snpt
 
 [![Version](https://img.shields.io/npm/v/snpt.svg?style=flat-square)](https://www.npmjs.com/package/snpt)
 [![Build Status](https://img.shields.io/travis/mike182uk/snpt.svg?style=flat-square)](http://travis-ci.org/mike182uk/snpt)
@@ -8,8 +8,6 @@
 A [gist](https://gist.github.com/) powered CLI snippet retriever.
 
 Save a snippet as a gist in GitHub, retrieve the snippet on the command line.
-
-Written in ES2015 and published as ES5.
 
 ![](example.gif)
 
@@ -25,8 +23,9 @@ Written in ES2015 and published as ES5.
   - [Setting a new GitHub access token](#token)
   - [Viewing help for a command](#help)
   - [Improve your workflow with fuzzy search](#fuzzy-search)
+  - [Alfred workflow](#alfred-workflow)
 - [Bash completion](#bash-completion)
-- [Uninstalling snpt](#uninstall)
+- [Uninstalling Snpt](#uninstall)
 
 ##<a id="prerequisites"></a>Prerequisites
 
@@ -44,7 +43,7 @@ npm install -g snpt
 
 ###<a id="syncing"></a>Syncing your snippets
 
-Before you can use snpt you will need to sync your gists:
+Before you can use Snpt you will need to sync your gists:
 
 ```bash
 snpt sync
@@ -52,7 +51,7 @@ snpt sync
 
 If this is the first time you have synced your gists you will be prompted to input a GitHub [access token](https://github.com/blog/1509-personal-api-tokens) (you will need create this in your GitHub account). This token should be be created with the `gist` scope enabled.
 
-The sync command will download all of your public and private gists and store them locally for fast retrieval by snpt.
+The sync command will download all of your public and private gists and store them locally for fast retrieval by Snpt.
 
 ###<a id="cp"></a>Copying a snippet to the clipboard
 
@@ -96,7 +95,7 @@ snpt sync -h
 
 ###<a id="fuzzy-search"></a>Improve your workflow with fuzzy search
 
-snpt :heart: [fzf](https://github.com/junegunn/fzf)
+Snpt :heart: [fzf](https://github.com/junegunn/fzf)
 
 
 ![](fzf-example.gif)
@@ -112,7 +111,11 @@ alias cs="snpt ls | fzf | snpt cp" # cs for copy snippet
 alias ws="snpt ls | fzf | snpt write" # ws for write snippet
 ```
 
-`snpt cp` and `snpt write` both accept stdin as an input. If stdin is detected snpt will try and extract a snippet ID from it. This is how the above `fzf` usage works.
+`snpt cp` and `snpt write` both accept stdin as an input. If stdin is detected Snpt will try and extract a snippet ID from it. This is how the above `fzf` usage works.
+
+###<a id="alfred-workflow"></a>Alfred Workflow
+
+The [Alfred Workflow](https://github.com/mike182uk/snpt-alfred-workflow) provides quick access to your snippets from Alfred.
 
 ##<a id="bash-completion"></a>Bash completion
 
@@ -124,9 +127,9 @@ source "$HOME/bash_completion/snpt"
 
 ##<a id="uninstall"></a>Uninstalling snpt
 
-First run `snpt` to find the location of snpt's config file.
+First run `snpt` to find the location of Snpt's config file.
 
-Once you have deleted the config file you can uninstall snpt by running:
+Once you have deleted the config file you can uninstall Snpt by running:
 
 ```bash
 npm uninstall -g snpt
