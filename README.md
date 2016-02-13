@@ -1,4 +1,4 @@
-# <img src="icon.png" height="24"> Snpt
+# <img src="icon.png" height="28"> Snpt
 
 [![Version](https://img.shields.io/npm/v/snpt.svg?style=flat-square)](https://www.npmjs.com/package/snpt)
 [![Build Status](https://img.shields.io/travis/mike182uk/snpt.svg?style=flat-square)](http://travis-ci.org/mike182uk/snpt)
@@ -115,7 +115,7 @@ alias ws="snpt ls | fzf | snpt write" # ws for write snippet
 
 ###<a id="alfred-workflow"></a>Alfred Workflow
 
-The [Alfred Workflow](https://github.com/mike182uk/snpt-alfred-workflow) provides quick access to your snippets from Alfred.
+The [Alfred workflow](https://github.com/mike182uk/snpt-alfred-workflow) provides quick access to your snippets from Alfred.
 
 ##<a id="bash-completion"></a>Bash completion
 
