@@ -28,7 +28,7 @@
   "dependencies": {
     "bluebird": "^3.1.1",
     "chalk": "^1.1.1",
-    "configstore": "^1.4.0",
+    "configstore": "^2.0.0",
     "copy-paste": "^1.1.4",
     "fetch-gists": "^1.0.1",
     "get-stdin": "^5.0.1",
