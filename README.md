@@ -4,6 +4,7 @@
 [![Build Status](https://img.shields.io/travis/mike182uk/snpt.svg?style=flat-square)](http://travis-ci.org/mike182uk/snpt)
 [![npm](https://img.shields.io/npm/dm/snpt.svg?style=flat-square)](https://www.npmjs.com/package/snpt)
 [![License](https://img.shields.io/github/license/mike182uk/snpt.svg?style=flat-square)](https://www.npmjs.com/package/snpt)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
 
 A [gist](https://gist.github.com/) powered CLI snippet retriever.
 
