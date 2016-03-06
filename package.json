@@ -18,6 +18,9 @@
     "url": "git://github.com/mike182uk/snpt.git"
   },
   "homepage": "https://github.com/mike182uk/snpt",
+  "bugs": {
+    "url": "https://github.com/mike182uk/snpt/issues"
+  },
   "keywords": [
     "gist",
     "snippet"
