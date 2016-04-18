@@ -33,9 +33,9 @@ export default function findSnippet(config, cli, onFoundSnippet) {
       }
 
       util.outputError('No snippet was found that matches this ID');
-    // if there was no STDIN and no snippet ID passed in then prompt a list
-    // of available snippets
     } else {
+      // if there was no STDIN and no snippet ID passed in then prompt a list
+      // of available snippets
       inquirer.prompt({
         name: 'snippet',
         message: 'Select a snippet:',
