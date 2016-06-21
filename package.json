@@ -51,7 +51,7 @@
     "cz-conventional-changelog": "^1.1.5",
     "espionage": "^1.0.0",
     "jscs": "^3.0.3",
-    "jshint": "^2.9.1-rc2",
+    "jshint": "^2.9.1",
     "tap-spec": "^4.1.1",
     "tape": "^4.4.0",
     "watch": "^0.19.1"
